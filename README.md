@@ -38,3 +38,74 @@ END
 GO
 
 ```
+
+
+# Number From String Function
+
+An implementation of the Pearson Correlation Coefficient in T-SQL with sample data to demonstrate functionality.
+
+## Background
+
+In statistics, the Pearson correlation coefficient, also referred to as Pearson's r is a measure of linear correlation between two sets of data.
+
+It is the covariance of two variables, divided by the product of their standard deviations. This creates a normalised measurement of covariance with a result between −1 and 1. 
+
+## Function
+
+
+```TSQL
+CREATE FUNCTION dbo.udfNumberFromString (@Str VARCHAR(MAX)) RETURNS FLOAT
+
+AS
+
+BEGIN
+
+DECLARE @Ctr INT = '1'
+DECLARE @Ret VARCHAR(MAX) = ''
+DECLARE @Sub CHAR(1)
+
+WHILE @Ctr <= LEN(@Str)
+
+	BEGIN
+
+	SELECT @Sub = SUBSTRING(@Str, @Ctr, 1)
+	SELECT @Ret = @Ret + @Sub
+	WHERE ISNUMERIC(@Sub) = '1' OR @Sub IN ('-', '.')
+
+	SELECT @Ctr = @Ctr + 1
+
+	END
+
+RETURN CAST(@Ret AS FLOAT)
+
+END
+
+
+GO
+
+```
+
+
+### Prerequisites
+
+* SQL Server
+
+* SQL Server Management Studio
+
+The SQL used does not involve any functions or features speccific to recent versions of Microsoft SQL Server and so should run without issue on any implementation of Microsoft SQL Server which is available.
+
+### Installing
+
+Both scripts have been written using temporary tables and temporary stored procedures and so it is not required to install anything in order for the scripts to run successfully.
+
+## Authors
+
+* **Christopher Lee** (https://github.com/chrislee1018/)
+
+
+## License
+
+This project is licensed under the GNU General Public License License 3.0 - see the [LICENSE](LICENSE) file for details
+
+
+
