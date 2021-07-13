@@ -1,8 +1,7 @@
 # Dynamic-SQL-Pivot-Table
 
 
-
-
+```TSQL
 IF OBJECT_ID('tempdb..#usp_DynamicPivotGeneric') IS NOT NULL DROP PROCEDURE #usp_DynamicPivotGeneric
 GO
 
@@ -35,3 +34,5 @@ BEGIN
    SET NOCOUNT ON
 END
 GO
+
+```
