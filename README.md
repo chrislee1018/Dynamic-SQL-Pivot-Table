@@ -1,5 +1,7 @@
 # Dynamic-SQL-Pivot-Table
 
+## Purpose
+
 
 ```TSQL
 IF OBJECT_ID('tempdb..#usp_DynamicPivotGeneric') IS NOT NULL DROP PROCEDURE #usp_DynamicPivotGeneric
