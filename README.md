@@ -1,5 +1,13 @@
 # Dynamic-SQL-Pivot-Table
 
+An implementation of the Pearson Correlation Coefficient in T-SQL with sample data to demonstrate functionality.
+
+## Background
+
+In statistics, the Pearson correlation coefficient, also referred to as Pearson's r is a measure of linear correlation between two sets of data.
+
+It is the covariance of two variables, divided by the product of their standard deviations. This creates a normalised measurement of covariance with a result between −1 and 1. 
+
 ## Stored Procedure
 
 ```TSQL
@@ -40,14 +48,6 @@ GO
 
 
 # Number From String Function
-
-An implementation of the Pearson Correlation Coefficient in T-SQL with sample data to demonstrate functionality.
-
-## Background
-
-In statistics, the Pearson correlation coefficient, also referred to as Pearson's r is a measure of linear correlation between two sets of data.
-
-It is the covariance of two variables, divided by the product of their standard deviations. This creates a normalised measurement of covariance with a result between −1 and 1. 
 
 ## Function
 
