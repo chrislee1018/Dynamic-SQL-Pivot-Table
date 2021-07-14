@@ -46,57 +46,6 @@ GO
 
 ```
 
-
-# Number From String Function
-
-## Function
-
-
-```TSQL
-CREATE FUNCTION dbo.udfNumberFromString (@Str VARCHAR(MAX)) RETURNS FLOAT
-
-AS
-
-BEGIN
-
-DECLARE @Ctr INT = '1'
-DECLARE @Ret VARCHAR(MAX) = ''
-DECLARE @Sub CHAR(1)
-
-WHILE @Ctr <= LEN(@Str)
-
-	BEGIN
-
-	SELECT @Sub = SUBSTRING(@Str, @Ctr, 1)
-	SELECT @Ret = @Ret + @Sub
-	WHERE ISNUMERIC(@Sub) = '1' OR @Sub IN ('-', '.')
-
-	SELECT @Ctr = @Ctr + 1
-
-	END
-
-RETURN CAST(@Ret AS FLOAT)
-
-END
-
-
-GO
-
-```
-
-
-### Prerequisites
-
-* SQL Server
-
-* SQL Server Management Studio
-
-The SQL used does not involve any functions or features speccific to recent versions of Microsoft SQL Server and so should run without issue on any implementation of Microsoft SQL Server which is available.
-
-### Installing
-
-Both scripts have been written using temporary tables and temporary stored procedures and so it is not required to install anything in order for the scripts to run successfully.
-
 ## Authors
 
 * **Christopher Lee** (https://github.com/chrislee1018/)
